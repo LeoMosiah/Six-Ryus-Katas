@@ -1,0 +1,14 @@
+const dicionario = { I:1, V:5, X:10, L:50, C:100, D:500, M:1000 }
+function converterRomanos(string){
+  const decimal = string.split('').map((elem)=>dicionario[elem]);
+  for(let i=0;i<decimal.length;i++){
+    if(i === (decimal.length)-1){
+      decimal[i] = decimal[i]
+    } else if(decimal[i] >= decimal[i+1]){
+     decimal[i] = decimal[i] 
+     } else {
+       decimal[i] = decimal[i]*(-1)
+     }
+  }
+  return decimal.reduce((a,b)=> a+b,0)
+}
