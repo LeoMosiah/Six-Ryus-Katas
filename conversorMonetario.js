@@ -1,5 +1,5 @@
 function conversorMonetario (afirmacoes){
-	let mapa = new Map();
+	const mapa = new Map();
 	for (let i=0;i<afirmacoes.length;i++){
 		let quantidadeEmCreditos = afirmacoes[i].slice(afirmacoes[i].indexOf('is')+1,(afirmacoes.length)-1).join(' ');
 		let quantidadeEmMoeda = afirmacoes[i].slice(0,afirmacoes[i].indexOf('is')-1).join(' ');
