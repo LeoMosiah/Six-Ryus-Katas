@@ -1,4 +1,5 @@
-function conversorMonetario (mapa,afirmacoes){
+function conversorMonetario (afirmacoes){
+	let mapa = new Map();
 	for (let i=0;i<afirmacoes.length;i++){
 		let quantidadeEmCreditos = afirmacoes[i].slice(afirmacoes[i].indexOf('is')+1,(afirmacoes.length)-1).join(' ');
 		let quantidadeEmMoeda = afirmacoes[i].slice(0,afirmacoes[i].indexOf('is')-1).join(' ');
@@ -6,4 +7,5 @@ function conversorMonetario (mapa,afirmacoes){
 		let valor = (parseInt(quantidadeEmCreditos,10)/(parseInt(converterRomanos(converterAlien(quantidadeEmMoeda))),10))
 		mapa.set(chave,valor)
 	}
+    return mapa;	
 }
